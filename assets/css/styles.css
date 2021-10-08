@@ -5,23 +5,26 @@
 :root{
     --header-height: 3rem;
     --font-medium: 500;
+    --font-bold: 600;
 }
 
 /*===== Colores =====*/
 :root{
-    --first-color: #5361FF;
+    
+    --first-color: #6B5B95;
     --white-color: #FAFAFF;
     --dark-color: #2A3B47;
     --text-color: #697477;
 }
 
-/*===== Fuente y tipografia =====*/
 :root{
     --body-font: 'Montserrat', sans-serif;
     --big-font-size: 6.25rem;
     --h2-font-size: 1.25rem;
+    --h2-font-size: 1rem;
     --normal-font-size: .938rem;
     --small-font-size: .813rem;
+    --smaller-font-size: .738rem;
 }
 @media screen and (min-width: 768px){
     :root{
@@ -242,13 +245,83 @@ img{
     margin-bottom: var(--mb-4);
 }
 .about__social-icon{
-    font-size: 1.4rem;
+    font-size: 2rem;
     margin: 0 var(--mb-1);
 }
 .about__social-icon:hover{
     color: var(--first-color);
 }
 
+.qualification-tabs{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: var(--mb-3);
+}
+.qualification-button{
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+}
+.qualification-data{
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 1.5rem;
+}
+.qualification-title{
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-bold);
+    color: var(--dark-color)
+}
+.qualification-subtitle{
+    display: inline-block;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-1);
+}
+.qualification-calendar{
+    font-size: var(--smaller-font-size);
+    color: var(--text-color);
+}
+.qualification-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.qualification-progress{
+    padding-top: var(--mb-2)
+}
+.qualification-rounder{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+}
+.qualification-line{
+    display: block;
+    width: 1px;
+    height: 110%;
+    background-color: var(--first-color);
+    transform: translate(6px, -7px);
+}
+.qualification-button:hover{
+    color: var(--first-color);
+}
+.qualification-icon{
+    font-size: 1.8rem;
+    margin-right: var(--mb-1);
+}
+.qualification [data-content]{
+    display: none;
+}
+.qualification-active[data-content]{
+    display: flex;
+}
+.qualification-subtitle-main{
+    margin-bottom: 2rem;
+    margin-top: -2rem;
+    text-align: center;
+}
 /* ===== SKILLS =====*/
 .skills__container{
     row-gap: 2rem;
@@ -374,6 +447,9 @@ img{
 }
 .footer__social:hover{
     color: var(--first-color);
+}
+.subtitle{
+    text-align: center;
 }
 
 /* ===== MEDIA QUERIES =====*/

@@ -41,6 +41,19 @@ function scrollActive(){
     })
 }
 
+const tabs = document.querySelectorAll('[data-target]');
+const tabContents = document.querySelectorAll('[data-content]');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.target);
+        tabContents.forEach(tabContent => {
+            tabContent.classList.remove('qualification-active');
+        })
+        target.classList.add('qualification-active');
+    })
+})
+
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
     origin: 'top',
@@ -60,6 +73,10 @@ sr.reveal('.about__subtitle', {delay: 300})
 sr.reveal('.about__profession', {delay: 400})
 sr.reveal('.about__text', {delay: 500})
 sr.reveal('.about__social-icon', {delay: 600, interval: 200})
+
+/*SCROLL QUALIFICATION*/
+sr.reveal('.qualification-subtitle-main', {delay: 200})
+sr.reveal('.qualification-tabs', {delay: 300})
 
 /*SCROLL SKILLS*/
 sr.reveal('.skills__subtitle', {})
